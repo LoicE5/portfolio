@@ -1,2 +1,5 @@
 connect.php
 assets/connect.php
+*.webm
+*.mp4
+*.mov
