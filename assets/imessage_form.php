@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iMessage Form | Loïc Etienne</title>
     <link rel="stylesheet" href="imessage_stylesheet.css">
@@ -27,9 +28,9 @@
         <p class="message-received">First, please tell me your first and last name, and your company name (if appliable) in the field below.</p>
         <p class="message-received"><i>Example : John Something from Thing LLC</i></p>
     </main>
-    <form method="POST" action="imessage_target.php">
-        <input type="text" required class="messageInput" placeholder="Your first name, last name and company name" name="names" style="z-index:3" onkeypress="sending(event,this)">
-        <input type="text" required class="messageInput" placeholder="Your email adress" name="email" style="z-index:2" onkeypress="sending(event,this)">
+    <form method="POST" action="imessage_target.php" autocomplete="off">
+        <input type="text" required class="messageInput" placeholder="Your first name, last name and company name" name="names" style="z-index:3" onkeydown="sending(event,this)">
+        <input type="text" required class="messageInput" placeholder="Your email adress" name="email" style="z-index:2" onkeydown="sending(event,this)">
         <textarea name="message" required rows="1" class="messageInput" style="z-index:0" placeholder="Your message"></textarea>
         <input type="image" src="../images/send_button.png" border="0" alt="Submit" />
     </form>
@@ -37,9 +38,13 @@
     <!--⬇ Script ⬇-->
     <script>
     function sending(e,el){
+        
         var code = (e.keyCode ? e.keyCode : e.which);
 
-        if(code == 13) { //Enter keycode
+        // console.log(code);
+
+        /*⬇ code == 13 → Return/Enter & code == 9 → Tab ⬇*/
+        if(code == 13 || code == 9) {
             let val = el.value;
 
             if(val != ''){
