@@ -1,0 +1,139 @@
+*,*::before,*::after {
+    box-sizing: border-box;
+}
+
+/*⬇ Classes for our project websites ⬇*/
+html.project {
+    color: white;
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+body.project {
+    background: black;
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+    padding: 8px;
+    overflow-x: hidden;
+}
+
+body.project h1 {
+    text-align: center;
+}
+/*⬆ Classes for our project websites ⬆*/
+
+html {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+main {
+    position: relative;
+    z-index: 0;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ul li {
+    line-height: 2;
+    color: black;
+}
+
+.horizontal-line {
+    width: 90vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    height: 1px;
+    background: black;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.lefted {
+    float: left;
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+p.imaged {
+    height: max-content;
+    min-height: 50px;
+    display: block;
+}
+
+.background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translateX(calc((100% - 100vw) / 2));
+    z-index: -1;
+    /*⬇ Blur & darken effect ⬇*/
+    opacity: 0.5;
+    filter: blur(30px);
+}
+
+.button-link {
+    display: inline-block;
+    width: max-content;
+    height: max-content;
+    padding: 10px;
+    color: white;
+    text-decoration-line: none;
+    font-weight: bold;
+    background: rgb(9,99,206);
+    margin-right: 10px;
+    transition: box-shadow 0.5s ease-in-out;
+}
+
+.button-link:hover {
+    box-shadow: 1px 1px 10px grey;
+}
+
+p.language {
+    margin-top: 0px;
+}
+
+h3.language {
+    margin-bottom: 5px;
+}
+
+.under-construction {
+    background: tomato !important;
+}
+
+.display-video {
+    position: absolute;
+    width: 80vw;
+    height: auto;
+    left: 10vw;
+    top: 5vh;
+    z-index: 2;
+}
+
+.closeIt {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    background: black;
+    opacity: 0.5;
+    top: 0px;
+    left: 0px;
+}
+
+.invisible {
+    display: none !important;
+}
+
+.crew-member,.crew-member>*,.crew-member>*:visited {
+    font-weight: bold;
+    color: rgb(9,99,206);
+    text-decoration-line: none;
+}

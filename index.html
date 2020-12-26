@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="https://csstools.github.io/normalize.css/11.0.0/normalize.css"> -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/atom.svg" type="image/x-icon">
+    <title>Loïc Etienne | Portfolio</title>
+    <script src="libraries/draggabilly.pkgd.min.js"></script>
+    <script src="libraries/draggabilly.min.js"></script>
+</head>
+<body>
+    <!--⬇ NAV ⬇-->
+    <nav>
+        <div class="imgContainer nav-item" data-cm="cm1">
+            <img src="images/atom.svg" alt="logo" />
+        </div>
+        <b class="nav-item" data-cm="cm2">About</b>
+        <span class="nav-item" data-cm="cm3">Contact</span>
+        <span class="nav-item" data-cm="cm4">My resume</span>
+        <span class="nav-item" id="clock"></span>
+    </nav>
+    <!--⬆ NAV ⬆-->
+
+
+    <!--⬇ Contextual menus of the nav ⬇-->
+    <div class="contextual-menu" id="cm1">
+        <p onclick="location.reload(true)">Restart</p>
+        <p onclick="window.location.href ='https://duckduckgo.com/'">Shutdown</p>
+    </div>
+
+    <div class="contextual-menu" id="cm2">
+        <p onclick="openWindow('safari','webpages/about_me.html','about me')">Learn more about me</p>
+        <p onclick="openWindow('safari','webpages/about_this_project.html','about this project')">Learn more about this project</p>
+    </div>
+
+    <div class="contextual-menu" id="cm3">
+        <p onclick="openWindow('imessage')">Click <u>here</u> to send me a nice message</p>
+        <p onclick="redirect('mailto:loic@etienne.tf')">Or use my email <i>loic@etienne.tf</i></p>
+        <p onclick="redirect('tel:+33613695512')">I can also be reached at <i>+33 (0) 6 13 69 55 12</i></p>
+        <div class="horizontal-line"></div>
+        <p onclick="redirect('https://www.linkedin.com/in/loic-etienne/')">My LinkedIn is one click away from here</p>
+        <p onclick="redirect('https://github.com/LoicE5')">So is my GitHub profile</p>
+    </div>
+
+    <div class="contextual-menu" id="cm4">
+        <p onclick="redirect('http://perso-etudiant.u-pem.fr/~letien04/web_resume/')">Click <u>here</u> to get to my online Resume</p>
+        <p onclick="redirect('https://perso-etudiant.u-pem.fr/~letien04/Loic_Etienne_Resume.pdf')">Or <u>here</u> to view my PDF resume</p>
+    </div>
+    <!--⬆ Contextual menus of the nav ⬆-->
+
+    <!--⬇ Dock ⬇-->
+    <div class="dock">
+        <img src="images/icons/finder-icon.png" alt="Finder" draggable="false" onclick="openWindow('finder')">
+        <img src="images/icons/safari-icon.png" alt="Safari" draggable="false" onclick="openWindow('safari','webpages/guide.html','guide')">
+        <img src="images/icons/messages-icon.png" alt="Messages" draggable="false" onclick="openWindow('imessage')">
+        <img src="images/icons/github-icon.png" alt="GitHub" draggable="false" onclick="redirect(`https://github.com/LoicE5`)">
+        <img src="images/icons/linkedin-icon.png" alt="" draggable="false" onclick="redirect(`https://www.linkedin.com/in/loic-etienne/`)">
+        <div class="vertical-dock-line"></div>
+        <img src="images/icons/trash-icon.png" alt="" draggable="false">
+    </div>
+    <!--⬆ Dock ⬆-->
+
+<!--⬇ JavaScript ⬇-->
+<script src="app.js"></script>
+</body>
+</html>

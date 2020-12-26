@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" class="project">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escape - Motion Design | Loïc Etienne</title>
+    <link rel="stylesheet" href="webpages_stylesheet.css">
+</head>
+<body class="project">
+    <main>
+        <h1>Escape - Motion Design</h1>
+
+        <h2>Overview</h2>
+
+        <p>When I was asked to create a motion deign project based on one of the four elements (water, fire, air, ground), I wished to create something out of the box that would be absolutely unexpected. Motion Designer isn’t my primary field of knowledge and expertise. I then wondered how I could make something relevant, beautiful enough with my current skills. I then decided that, instead of drawing and animating my assets upfront, I will create them aside as static images, and then separate the relevant parts (as an example, divide a human into head, body, arms, hands, legs, feet) and animate them directly into my compositing timeline. For an experimental way to do, the result was quite interesting.
+        <br><br>
+        Escape is the story of a North Korean soldier that wishes to leave his country and reach the southern part of the peninsula. He steals a rifle, infiltrate a secret military base, eliminates the guards and steals a secret airplane. He then get chased by the DPRK’s air forces, and uses a secret feature to sow them and reach his goal.
+        <br><br>
+        The entire animation movie have been made using the FXHOME’s HitFilm Pro software, a complete editing and compositing professional suite.<br>
+        I wanted to give an offbeat tone to the project, integrating funny sound effects in order to play it down.
+        </p>
+
+        <h2>Links</h2>
+
+        <a class="button-link" href="" target="" onclick="displayVid(event)">View the project</a>
+        <!-- <a class="button-link" href="" target="_blank">GitHub</a> -->
+
+        <h3 class="language">Language</h3>
+        <p class="language">🇬🇧 English</p>
+    </main>
+
+    <!--⬇ Video content ⬇-->
+    <video controls class="display-video invisible">
+        <source src="../videos/Escape_Motion-Design.webm" type="video/webm">
+        <source src="../videos/Escape_Motion-Design.mp4" type="video/mp4">
+        Please update your browser :)
+    </video>
+    <div class="closeIt invisible" onclick="closeVid()"></div>
+    <!--⬆ Video content ⬆-->
+
+    <!--⬇ Background video ⬇-->
+    <video muted autoplay loop class="background-video">
+        <source src="../videos/escape.webm" type="video/webm">
+        <source src="../videos/escape.mp4" type="video/mp4">
+        Please update your browser :)
+    </video>
+
+    <!--⬇ JavaScript ⬇-->
+    <script>
+        function displayVid(e){
+            e.preventDefault();
+            document.querySelector('.display-video').classList.remove('invisible');
+            document.querySelector('.closeIt').classList.remove('invisible');
+            document.querySelector('.background-video').pause();
+        }
+
+        function closeVid(){
+            document.querySelector('.display-video').classList.add('invisible');
+            document.querySelector('.closeIt').classList.add('invisible');
+            document.querySelector('.background-video').play();
+            document.querySelector('.display-video').pause();
+        }
+    </script>
+</body>
+</html>

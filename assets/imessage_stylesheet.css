@@ -1,0 +1,233 @@
+:root {
+    --content-border: 1px solid rgb(76,80,82);
+    --the-blue: rgb(6,113,230);
+}
+*,*::before,*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: helvetica;
+    color: white !important;
+    caret-color: white;
+}
+
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgb(48,47,46);
+}
+
+aside {
+    float: left;
+    width: 30%;
+    height: 100%;
+    background: rgb(48,47,46);
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+main {
+    float: right;
+    width: 70%;
+    height: 95%;
+    background: rgb(34,33,32);
+    position: relative;
+    overflow-y: scroll;
+    padding-top: 40px;
+}
+
+main,textarea {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+ /* Hide scrollbar for Chrome, Safari and Opera */
+main::-webkit-scrollbar,textarea::-webkit-scrollbar {
+    display: none;
+}
+
+.user-container {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 40px;
+    background: rgb(50,50,50);
+    display: flex;
+    flex-flow: row nowrap;
+    border-bottom: var(--content-border);
+}
+
+.user-container>span:first-child {
+    color: rgb(137,136,136);
+    margin-left: 10px;
+}
+
+.user-container>* {
+    display: inline-block;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 0.76rem;
+}
+
+.user-container>span:nth-child(2) {
+    padding: 5px;
+}
+
+.user-container>span:nth-child(2):hover {
+    background: rgb(72,89,113);
+    border-radius: 3px;
+    cursor: default;
+}
+
+.searchbar-container {
+    width: 80%;
+    margin-top: 11px;
+    margin-bottom: 11px;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgb(64,60,58);
+    border-radius: 3px;
+    height: max-content;
+    position: relative;
+}
+
+.searchbar-container>input {
+    background: inherit;
+    border: none;
+    width: 100%;
+    outline: none;
+    border-radius: inherit;
+    padding-left: 18px;
+    color: white;
+}
+
+.searchbar-container>img {
+    width: auto;
+    height: 10px;
+    position: absolute;
+    left: 3px;
+    top: 4px;
+}
+
+input::placeholder {
+    color: rgb(159,146,134);
+}
+
+.contact {
+    width: 100%;
+    height: max-content;
+    border-top: var(--content-border);
+    border-bottom: var(--content-border);
+    padding: 10px;
+    font-size: 0.85rem;
+    background: var(--the-blue);
+}
+
+.contact>b {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+.contact>span {
+    color: rgb(193,223,255);
+}
+
+.contact>img {
+    border-radius: 50%;
+    float: left;
+    width: 20%;
+    height: auto;
+    margin-right: 10px;
+}
+
+form {
+    display: flex;
+    background: rgb(30,30,30);
+    width: 70%;
+    min-height: 5%;
+    position: relative;
+    border-top: var(--content-border);
+}
+
+.messageInput {
+    width: 95%;
+    height: 70%;
+    background: rgb(60,60,60);
+    border-radius: 999px;
+    border: solid 1px rgb(98,98,100);
+    outline: none;
+    padding-left: 5px;
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    font-family: inherit;
+}
+
+.messageInput::placeholder {
+    color: rgb(200,200,200);
+}
+
+.message-received {
+    max-width: 50%;
+    height: max-content;
+    width: max-content;
+    background: rgb(85,85,85);
+    border-radius: 10px;
+    padding: 5px;
+    margin-left: 10px;
+    font-size: 0.85rem;
+}
+
+.message-sent {
+    max-width: 50%;
+    width: max-content;
+    height: max-content;
+    background: var(--the-blue);
+    border-radius: 10px;
+    padding: 5px;
+    margin-right: 10px;
+    margin-left: auto;
+    font-size: 0.85rem;
+}
+
+.screen-reader-text { 
+    border:0;   
+    clip: rect(1px, 1px, 1px, 1px); 
+    clip-path: inset(50%);
+    height: 1px; 
+    margin: -1px;
+    width: 1px; 
+    overflow: hidden; 
+    position: absolute !important;
+    word-wrap:normal !important;
+}
+
+textarea {
+    border-radius: 20px !important;
+    resize: none;
+    padding: 5px;
+}
+
+form input[type="image"] {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left: auto;
+    right: 3%;
+    top: 7px;
+    z-index: 1;
+}
+
+@media(max-width: 360px){
+    aside {
+        display: none;
+    }
+    main,form {
+        width: 100%;
+    }
+}
