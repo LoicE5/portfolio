@@ -6,6 +6,8 @@ My portfolio was a challenge both on the thinking aspect as well as the realizat
 
 That's in that aim that I built my portfolio in this way. I hope that you are enjoying it. Do not hesitate to seek the few easter eggs I've put in it, or head to the "safari" app in the dock to have a better understanding of how this portfolio actually works if you need to.
 
+![](https://media0.giphy.com/media/L4fCam4mCToYp6mHjr/giphy.gif)
+
 ## Technologies
 
 * HTML
