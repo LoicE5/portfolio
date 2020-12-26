@@ -21,3 +21,9 @@ That's in that aim that I built my portfolio in this way. I hope that you are en
 ### Links
 
 **[Get to the project here !](http://perso-etudiant.u-pem.fr/~letien04/Portfolio/)**
+
+### *Attention*
+
+The "videos" folder isn't available on GitHub. This is due of the size of the files that exceed 100MB and cannot be uploaded to GitHub. However, the videos on the server are still fully functional and their unavailability on GitHub doesn't affect the experience on the website.
+
+**Have a nice browsing :)**
