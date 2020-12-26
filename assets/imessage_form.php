@@ -37,11 +37,20 @@
 
     <!--⬇ Script ⬇-->
     <script>
+    window.onload = ()=>{
+        var ua = navigator.userAgent.toLowerCase();
+        var isAndroid = ua.indexOf("android") > -1;
+        if(isAndroid){
+            alert("Dear visitor,\n\nIt seems that you are using an Android device. Unfortunately, the interactivity of this form is based on the keyCode JavaScript detection, that is impossible because of Android's restrictions.\n\nYou can :\n\n- Open this window with an IOS device or with any computer or\n\n- Reach me directly at loic@etienne.tf");
+        }
+        console.log('ATTENTION\n\nThe content that you might be seeing in this console is for pure development purposes and is destinated to developers who wish to help me improve the efficiency of this code. If you are a regular user, please do not pay attention to what may appears below.');
+    }
+
     function sending(e,el){
         
         var code = (e.keyCode ? e.keyCode : e.which);
 
-        // console.log(code);
+        console.log('keyCode → '+code);
 
         /*⬇ code == 13 → Return/Enter & code == 9 → Tab ⬇*/
         if(code == 13 || code == 9) {
