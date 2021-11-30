@@ -37,52 +37,52 @@
 
     <!--⬇ Script ⬇-->
     <script>
-    window.onload = ()=>{
-        var ua = navigator.userAgent.toLowerCase();
-        var isAndroid = ua.indexOf("android") > -1;
-        if(isAndroid){
-            alert("Dear visitor,\n\nIt seems that you are using an Android device. Unfortunately, the interactivity of this form is based on the keyCode JavaScript detection, that is impossible because of Android's restrictions.\n\nYou can :\n\n- Open this window with an IOS device or with any computer or\n\n- Reach me directly at loic@etienne.tf");
+        window.onload = ()=>{
+            var ua = navigator.userAgent.toLowerCase();
+            var isAndroid = ua.indexOf("android") > -1;
+            if(isAndroid){
+                alert("Dear visitor,\n\nIt seems that you are using an Android device. Unfortunately, the interactivity of this form is based on the keyCode JavaScript detection, that is impossible because of Android's restrictions.\n\nYou can :\n\n- Open this window with an IOS device or with any computer or\n\n- Reach me directly at loic.e@ik.me");
+            }
+            console.log('ATTENTION\n\nThe content that you might be seeing in this console is for pure development purposes and is destinated to developers who wish to help me improve the efficiency of this code. If you are a regular user, please do not pay attention to what may appears below.');
         }
-        console.log('ATTENTION\n\nThe content that you might be seeing in this console is for pure development purposes and is destinated to developers who wish to help me improve the efficiency of this code. If you are a regular user, please do not pay attention to what may appears below.');
-    }
 
-    function sending(e,el){
-        
-        var code = (e.keyCode ? e.keyCode : e.which);
+        function sending(e,el){
+            
+            var code = (e.keyCode ? e.keyCode : e.which);
 
-        console.log('keyCode → '+code);
+            console.log('keyCode → '+code);
 
-        /*⬇ code == 13 → Return/Enter & code == 9 → Tab ⬇*/
-        if(code == 13 || code == 9) {
-            let val = el.value;
+            /*⬇ code == 13 → Return/Enter & code == 9 → Tab ⬇*/
+            if(code == 13 || code == 9) {
+                let val = el.value;
 
-            if(val != ''){
+                if(val != ''){
 
-                if(el.name == "names"){
-                    document.querySelector('main').innerHTML += `
-                        <p class="message-sent">${val}</p>
-                        <p class="message-received">Alright ${val}, nice to meet you ! Can I please ask you for your email address ? You can type it in the field below !</p>
-                    `;
-                } else if(el.name == "email"){
-                    document.querySelector('main').innerHTML += `
-                        <p class="message-sent">${val}</p>
-                        <p class="message-received">Thanks ! I'll be using this email address to reach you once I've read your message ! Talking about message, what is it ? You can type it below as well as before.</p>
-                    `;
+                    if(el.name == "names"){
+                        document.querySelector('main').innerHTML += `
+                            <p class="message-sent">${val}</p>
+                            <p class="message-received">Alright ${val}, nice to meet you ! Can I please ask you for your email address ? You can type it in the field below !</p>
+                        `;
+                    } else if(el.name == "email"){
+                        document.querySelector('main').innerHTML += `
+                            <p class="message-sent">${val}</p>
+                            <p class="message-received">Thanks ! I'll be using this email address to reach you once I've read your message ! Talking about message, what is it ? You can type it below as well as before.</p>
+                        `;
+                    }
+
+                    el.classList.add('screen-reader-text');
                 }
-
-                el.classList.add('screen-reader-text');
             }
         }
-    }
 
-    var textarea = document.querySelector("textarea");
-    var heightLimit = 150; /* Maximum height: 200px */
+        var textarea = document.querySelector("textarea");
+        var heightLimit = 150; /* Maximum height: 200px */
 
-    textarea.oninput = function() {
-        textarea.style.height = ""; /* Reset the height*/
-        textarea.style.height = Math.min(textarea.scrollHeight, heightLimit) + "px";
-        document.querySelector('form').style.height = Math.min(textarea.scrollHeight, heightLimit) + "px";
-    }
+        textarea.oninput = function() {
+            textarea.style.height = ""; /* Reset the height*/
+            textarea.style.height = Math.min(textarea.scrollHeight, heightLimit) + "px";
+            document.querySelector('form').style.height = Math.min(textarea.scrollHeight, heightLimit) + "px";
+        }
     </script>
 </body>
 </html>
