@@ -22,7 +22,7 @@ That's in that aim that I built my portfolio in this way. I hope that you are en
 
 ### Links
 
-**[Get to the project here !](https://loic.finance/portfolio/)**
+**[Get to the project here !](https://loice5.github.io/portfolio/)**
 
 ### *Attention*
 
