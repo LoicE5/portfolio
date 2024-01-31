@@ -1,5 +1,5 @@
 window.onload = ()=>{
-    console.log(window.innerWidth+' x '+window.innerHeight);
+    openWindow('safari','webpages/update.html','update')
 }
 
 /* Date init */
@@ -65,7 +65,7 @@ function openWindow(app,url,name){
         let el = document.createElement('div');
         el.classList.add('draggable');
 
-        if(app == 'finder'){
+        if(app === 'finder'){
             el.classList.add('finder-window');
             el.innerHTML += `
             <header ondblclick="setFullScreen(this.closest('.finder-window'))">
@@ -105,7 +105,7 @@ function openWindow(app,url,name){
             </div>`;
             document.body.append(el);
             
-        } else if(app == 'safari'){
+        } else if(app === 'safari'){
             el.classList.add('safarii');
             el.innerHTML += `
             <header ondblclick="setFullScreen(this.closest('.safarii'))">
@@ -116,7 +116,7 @@ function openWindow(app,url,name){
             </header>
             <iframe src="${url}" frameborder="0"></iframe>`;
             document.body.append(el);
-        } else if(app == 'imessage') {
+        } else if(app === 'imessage') {
             el.classList.add('imessage-window');
             el.innerHTML += `
             <header style="touch-action: none;" ondblclick="setFullScreen(this.closest('.imessage-window'))">
@@ -124,7 +124,7 @@ function openWindow(app,url,name){
             <div class="actionBtn yellow"></div>
             <div class="actionBtn green" onclick="setFullScreen(this.closest('.imessage-window'))"></div>
             </header>
-            <iframe src="assets/imessage_form.php" scrolling="no" frameborder="0"></iframe>`;
+            <iframe src="assets/imessage_form.html" scrolling="no" frameborder="0"></iframe>`;
             document.body.append(el);
         }
     } else {
@@ -136,37 +136,37 @@ function removeEl(element){
     document.body.removeChild(element);
 }
 
-function urlSubmit(e,concernedInput){
-    var code = (e.keyCode ? e.keyCode : e.which);
+function urlSubmit(e,relevantInput){
+    const code = e.keyCode ? e.keyCode : e.which
 
     if(code == 13) { //Enter keycode
 
-        console.log('enter press');
+        const iframe = relevantInput.closest('div').querySelector('iframe')
 
-        let iframe = concernedInput.closest('div').querySelector('iframe');
-
-        let val = concernedInput.value;
+        const val = relevantInput.value
 
         if(val == 'guide'){
             iframe.src = 'webpages/guide.html';
-        } else if(val == 'chinese portrait'){
+        } else if(val === 'chinese portrait'){
             iframe.src = 'webpages/chinese_portrait.html';
-        } else if(val == 'web resume'){
+        } else if(val === 'web resume'){
             iframe.src = 'webpages/web_resume.html';
-        } else if(val == 'quoridor'){
+        } else if(val === 'quoridor'){
             iframe.src = 'webpages/quoridor.html';
-        } else if(val == 'video resume'){
+        } else if(val === 'video resume'){
             iframe.src = 'webpages/video_resume.html';
-        } else if(val == 'escape'){
+        } else if(val === 'escape'){
             iframe.src = 'webpages/escape.html';
-        } else if(val == 'reah'){
+        } else if(val === 'reah'){
             iframe.src = 'webpages/reah.html';
-        } else if(val == 'about me'){
+        } else if(val === 'about me'){
             iframe.src = 'webpages/about_me.html';
-        } else if(val == 'stagengo'){
+        } else if(val === 'stagengo'){
             iframe.src = 'webpages/stagengo.html';
-        } else if(val == 'about this project'){
+        } else if(val === 'about this project'){
             iframe.src = 'webpages/about_this_project.html';
+        } else if (val === 'update') {
+            iframe.src = 'webpages/update.html'
         }
         else {
             iframe.src = 'webpages/access_denied.html';
